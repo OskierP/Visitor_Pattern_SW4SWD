@@ -9,7 +9,7 @@ namespace Visitor_Pattern_SW4SWD
 {
     public class Farm
     {
-        private List<Animal> animals = new List<Animal>();
+        private List<IAnimal> animals = new List<IAnimal>();
         private List<Worker> workers = new List<Worker>();
 
         public void Produce();
