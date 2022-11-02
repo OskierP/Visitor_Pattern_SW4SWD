@@ -1,3 +1,3 @@
 interface IAnimal{
-    public void accept(); //add
+    public void accept(Worker visitor); //add
 }
