@@ -1,6 +1,6 @@
 class Sheep: IAnimal
 {
-    public void accept()
+    public void accept(IWorker visitor)
     {
         throw new NotImplementedException();
     }
