@@ -1,4 +1,4 @@
-class Chicken : IAnimal
+public class Chicken : IAnimal
 {
     public void accept(IWorker visitor)
     {

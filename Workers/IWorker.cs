@@ -1,4 +1,4 @@
-﻿interface IWorker
+﻿public interface IWorker
 {
     public void Visit(Cow cow);
     public void Visit(Sheep sheep);
