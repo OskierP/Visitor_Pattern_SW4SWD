@@ -2,7 +2,7 @@ public class Sheep: IAnimal
 {
     public void accept(IWorker visitor)
     {
-        throw new NotImplementedException();
+        visitor.Visit(this);
     }
 
     public bool isShearable(){
