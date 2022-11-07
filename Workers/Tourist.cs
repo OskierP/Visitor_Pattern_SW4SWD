@@ -1,46 +1,51 @@
+namespace Visitor_Pattern_SW4SWD.Workers;
 
-public class Shearer : IVisitor
+public class Tourist : IVisitor
 {
-    private int wool;
+    private int picturesTaken = 0;
 
-    public void GetWool(int kg)
+    public void TakePicutre()
     {
-        wool += kg;
+        picturesTaken++;
     }
 
-    public int ShowWool()
+    public int ShowPics()
     {
-        return wool;
+        return picturesTaken;
     }
-    
     public void visit(Cow animal)
     {
-        Console.WriteLine($"I cannot shear {animal.GetType()}");
+       Console.WriteLine($"Pic taken of {animal.GetType()}");
+       TakePicutre();
     }
 
     public void visit(Sheep animal)
     {
-        Console.WriteLine($"I've sheared {animal.GetType()} and got 2kg of woool");
-        GetWool(2);
+        Console.WriteLine($"Pic taken of {animal.GetType()}");
+        TakePicutre();
     }
 
     public void visit(Pig animal)
     {
-        Console.WriteLine($"I cannot shear {animal.GetType()}");
+        Console.WriteLine($"Pic taken of {animal.GetType()}");
+        TakePicutre();
     }
 
     public void visit(Chicken animal)
     {
-        Console.WriteLine($"I {typeof(Shearer)} visted {typeof(Chicken)}");
+        Console.WriteLine($"Pic taken of {animal.GetType()}");
+        TakePicutre();
     }
 
     public void visit(Goat animal)
     {
-        Console.WriteLine($"I {typeof(Shearer)} visted {typeof(Goat)}");
+        Console.WriteLine($"Pic taken of {animal.GetType()}");
+        TakePicutre();
     }
-
+    
     public void visit(Farm farm)
     {
+        Console.WriteLine("Wow, what an amaizing farm! First selfie: 🧑‍🌾");
         foreach(var location in farm.GetList())
         {
             location.accept(this);
@@ -59,10 +64,10 @@ public class Shearer : IVisitor
 
     public void visit(Pen pen)
     {
-       Console.WriteLine("There is no animal to shear in a pen\n");
+        Console.WriteLine("As a Tourist I'm not going to Pen\n");
     }
 
-   public void visit(Field field)
+    public void visit(Field field)
     {
         Console.WriteLine("I'm in a field");
         foreach (var animals in field.GetList())
@@ -71,4 +76,6 @@ public class Shearer : IVisitor
         }
         Console.WriteLine("");
     }
+    
+    
 }

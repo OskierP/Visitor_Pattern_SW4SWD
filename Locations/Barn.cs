@@ -13,7 +13,7 @@ public class Barn: ILocations
         return _animals;
     }
     
-    public void accept(IWorker visitor)
+    public void accept(IVisitor visitor)
     {
        visitor.visit(this);
     }

@@ -1,5 +1,5 @@
 
 public interface IFarm
 {
-    public void accept(IWorker visitor);
+    public void accept(IVisitor visitor);
 }

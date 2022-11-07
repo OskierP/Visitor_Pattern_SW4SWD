@@ -1,42 +1,46 @@
+namespace Visitor_Pattern_SW4SWD.Workers;
 
-public class Shearer : IVisitor
+public class Milker : IVisitor
 {
-    private int wool;
+    private int milk = 0;
 
-    public void GetWool(int kg)
+
+    public void GetMilk(int liters)
     {
-        wool += kg;
+        milk+=liters;
     }
 
-    public int ShowWool()
+    public int ShowMilk()
     {
-        return wool;
+        return milk;
     }
     
     public void visit(Cow animal)
     {
-        Console.WriteLine($"I cannot shear {animal.GetType()}");
+        Console.WriteLine($"{animal.GetType()} gave me 2 Litres of milk");
+        GetMilk(2);
     }
 
     public void visit(Sheep animal)
     {
-        Console.WriteLine($"I've sheared {animal.GetType()} and got 2kg of woool");
-        GetWool(2);
+        Console.WriteLine($"{animal.GetType()} gave me 1 Litre of milk");
+        GetMilk(1);
     }
 
     public void visit(Pig animal)
     {
-        Console.WriteLine($"I cannot shear {animal.GetType()}");
+        Console.WriteLine("Pig doesnt give milk");
     }
 
     public void visit(Chicken animal)
     {
-        Console.WriteLine($"I {typeof(Shearer)} visted {typeof(Chicken)}");
+        Console.WriteLine("Chicken doesnt give milk");
     }
 
     public void visit(Goat animal)
     {
-        Console.WriteLine($"I {typeof(Shearer)} visted {typeof(Goat)}");
+        Console.WriteLine($"{animal.GetType()} gave me 3 Litres of milk");
+        GetMilk(3);
     }
 
     public void visit(Farm farm)
@@ -59,12 +63,12 @@ public class Shearer : IVisitor
 
     public void visit(Pen pen)
     {
-       Console.WriteLine("There is no animal to shear in a pen\n");
+        Console.WriteLine("There's no animal to milk in a Pen\n");
     }
 
-   public void visit(Field field)
+    public void visit(Field field)
     {
-        Console.WriteLine("I'm in a field");
+        Console.WriteLine("I'm in a filed");
         foreach (var animals in field.GetList())
         {
             animals.accept(this);

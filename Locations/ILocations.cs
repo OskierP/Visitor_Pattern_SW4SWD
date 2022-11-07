@@ -1,4 +1,4 @@
 public interface ILocations
 {
-    public void accept(IWorker visitor);
+    public void accept(IVisitor visitor);
 }

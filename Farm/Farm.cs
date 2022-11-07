@@ -12,7 +12,7 @@ public class Farm: IFarm
         return _locationsList;
     }
     
-    public void accept(IWorker visitor)
+    public void accept(IVisitor visitor)
     {
         visitor.visit(this);
     }
