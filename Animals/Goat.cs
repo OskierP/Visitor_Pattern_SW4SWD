@@ -1,7 +1,10 @@
-public class Goat: IAnimal
+public class Goat : IAnimal
 {
+ 
+    public Goat(){}
+    
     public void accept(IWorker visitor)
     {
-        visitor.Visit(this);
+        visitor.visit(this);
     }
 }

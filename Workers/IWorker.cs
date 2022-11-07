@@ -1,8 +1,13 @@
 ﻿public interface IWorker
 {
-    public void Visit(Cow cow);
-    public void Visit(Sheep sheep);
-    public void Visit(Pig pig);
-    public void Visit(Chicken chicken);
-    public void Visit(Goat goat);
+    public void visit(Cow cow);
+    public void visit(Sheep sheep);
+    public void visit(Pig pig);
+    public void visit(Chicken chicken);
+    public void visit(Goat goat);
+    public void visit(Farm farm);
+    public void visit(Barn barn);
+    public void visit(Pen pen);
+    public void visit(Field field);
+    
 }

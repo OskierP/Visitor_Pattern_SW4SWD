@@ -1,7 +1,9 @@
 public class Chicken : IAnimal
 {
+    
+    public Chicken(){}
     public void accept(IWorker visitor)
     {
-        visitor.Visit(this);
+        visitor.visit(this);
     }
 }

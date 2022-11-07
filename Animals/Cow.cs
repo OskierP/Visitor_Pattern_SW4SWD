@@ -1,11 +1,9 @@
 public class Cow : IAnimal
 {
+    public Cow(){}
+    
     public void accept(IWorker visitor)
     {
-        visitor.Visit(this);
-    }
-
-     public bool hasMilk(){
-        return false;
+        visitor.visit(this);
     }
 }

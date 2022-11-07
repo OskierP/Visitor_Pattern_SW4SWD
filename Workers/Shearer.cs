@@ -1,27 +1,60 @@
-﻿class Shearer : IWorker
+
+public class Shearer : IWorker
 {
-    public void Visit(Cow cow)
+    public void visit(Cow cow)
     {
-        throw new NotImplementedException();
+        Console.WriteLine($"I {typeof(Shearer)} visted {typeof(Cow)}");
     }
 
-    public void Visit(Sheep sheep)
+    public void visit(Sheep sheep)
     {
-        throw new NotImplementedException();
+        Console.WriteLine($"I {typeof(Shearer)} visted {typeof(Sheep)}");
     }
 
-    public void Visit(Pig pig)
+    public void visit(Pig pig)
     {
-        throw new NotImplementedException();
+        Console.WriteLine($"I {typeof(Shearer)} visted {typeof(Pig)}");
     }
 
-    public void Visit(Chicken chicken)
+    public void visit(Chicken chicken)
     {
-        throw new NotImplementedException();
+        Console.WriteLine($"I {typeof(Shearer)} visted {typeof(Chicken)}");
     }
 
-    public void Visit(Goat goat)
+    public void visit(Goat goat)
     {
-        throw new NotImplementedException();
+        Console.WriteLine($"I {typeof(Shearer)} visted {typeof(Goat)}");
+    }
+
+    public void visit(Farm farm)
+    {
+        foreach(var location in farm.GetList())
+        {
+            location.accept(this);
+        }
+    }
+
+    public void visit(Barn barn)
+    {
+        foreach (var animals in barn.GetList())
+        {
+            animals.accept(this);
+        }
+    }
+
+    public void visit(Pen pen)
+    {
+        foreach (var animals in pen.GetList())
+        {
+            animals.accept(this);
+        }
+    }
+
+   public void visit(Field field)
+    {
+        foreach (var animals in field.GetList())
+        {
+            animals.accept(this);
+        }
     }
 }

@@ -1,11 +1,10 @@
-public class Sheep: IAnimal
+public class Sheep : IAnimal
 {
+    
+    public Sheep(){}
+    
     public void accept(IWorker visitor)
     {
-        visitor.Visit(this);
-    }
-
-    public bool isShearable(){
-        return false;
+        visitor.visit(this);
     }
 }

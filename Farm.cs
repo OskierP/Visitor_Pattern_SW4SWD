@@ -1,20 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Runtime.Versioning;
 
 namespace Visitor_Pattern_SW4SWD
 {
-    public class Farm
+
+
+    class Program
     {
-        private List<IAnimal> animals = new List<IAnimal>();
-        private List<IWorker> workers = new List<IWorker>();
+        public static void Main(string[] args)
+        {
+            Barn barn = new Barn(new List<IAnimal>{new Pig(), new Goat()});
+            Field field = new Field(new List<IAnimal> { new Cow(), new Sheep() });
+            Pen pen = new Pen(new List<IAnimal> { new Chicken() });
+            
+            Farm farm = new Farm(new List<ILocations>{barn, field, pen});
+            
+            farm.accept(new Shearer());
 
-        public void Produce(){}
-
-        public void Admit(ref IWorker w){}
-        public void Dismiss(ref IWorker w){}
+        }
     }
 }
