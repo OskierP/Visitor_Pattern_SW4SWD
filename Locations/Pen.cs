@@ -1,15 +1,14 @@
-
-public class Pen: ILocations
+public class Pen: IVisitable
 {
     
-    private List<IAnimal> _animals;
+    private List<IVisitable> _animals;
 
-    public Pen(List<IAnimal> list)
+    public Pen(List<IVisitable> list)
     {
         _animals = list;
     }
 
-    public List<IAnimal> GetList()
+    public List<IVisitable> GetList()
     {
         return _animals;
     }

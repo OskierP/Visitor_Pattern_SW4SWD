@@ -1,15 +1,14 @@
-
-public class Field: ILocations
+public class Field: IVisitable
 {
     
-    private List<IAnimal> _animals;
+    private List<IVisitable> _animals;
 
-    public Field(List<IAnimal> list)
+    public Field(List<IVisitable> list)
     {
         _animals = list;
     }
 
-    public List<IAnimal> GetList()
+    public List<IVisitable> GetList()
     {
         return _animals;
     }
