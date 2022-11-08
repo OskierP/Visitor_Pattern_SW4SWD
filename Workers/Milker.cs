@@ -2,50 +2,61 @@ namespace Visitor_Pattern_SW4SWD.Workers;
 
 public class Milker : IVisitor
 {
-    private int milk = 0;
-
-
-    public void GetMilk(int liters)
-    {
-        milk+=liters;
-    }
+    private int _milk = 0;
 
     public int ShowMilk()
     {
-        return milk;
+        return _milk;
     }
     
-    public void visit(Cow animal)
+    public void visit(Cow cow)
     {
-        Console.WriteLine($"{animal.GetType()} gave me 2 Litres of milk");
-        GetMilk(2);
+        int cowMilk = cow.Milk();
+        Console.WriteLine($"Cow gave me {cowMilk} Litres of milk");
+        _milk += cowMilk;
     }
 
-    public void visit(Sheep animal)
+    public void visit(Sheep sheep)
     {
-        Console.WriteLine($"{animal.GetType()} gave me 1 Litre of milk");
-        GetMilk(1);
+        if (sheep.HasMilk())
+        {
+            int sheepMilk = sheep.Milk();
+            Console.WriteLine($"Sheep gave me {sheepMilk} Litres of milk");
+            _milk += sheepMilk;
+        }
+        else
+        {
+            Console.WriteLine("Sheep didn't have any milk");
+        }
     }
 
-    public void visit(Pig animal)
+    public void visit(Pig pig)
     {
         Console.WriteLine("Pig doesnt give milk");
     }
 
-    public void visit(Chicken animal)
+    public void visit(Chicken chicken)
     {
         Console.WriteLine("Chicken doesnt give milk");
     }
 
-    public void visit(Goat animal)
+    public void visit(Goat goat)
     {
-        Console.WriteLine($"{animal.GetType()} gave me 3 Litres of milk");
-        GetMilk(3);
+        if (goat.IsAngry())
+        {
+            Console.WriteLine("Auch! The goat headbutted me.");
+        }
+        else
+        {
+            int goatMilk = goat.Milk();
+            Console.WriteLine($"Goat gave me {goatMilk} Litres of milk");
+            _milk += goatMilk;
+        }
     }
 
     public void visit(Farm farm)
     {
-        foreach(var location in farm.GetList())
+        foreach(var location in farm.GetLocations())
         {
             location.accept(this);
         }
@@ -54,7 +65,7 @@ public class Milker : IVisitor
     public void visit(Barn barn)
     {
         Console.WriteLine("I'm in a barn");
-        foreach (var animals in barn.GetList())
+        foreach (var animals in barn.GetAnimals())
         {
             animals.accept(this);
         }
@@ -68,8 +79,8 @@ public class Milker : IVisitor
 
     public void visit(Field field)
     {
-        Console.WriteLine("I'm in a filed");
-        foreach (var animals in field.GetList())
+        Console.WriteLine("I'm in a field");
+        foreach (var animals in field.GetAnimals())
         {
             animals.accept(this);
         }

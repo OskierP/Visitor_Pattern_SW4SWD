@@ -1,13 +1,13 @@
 public class Farm: IVisitable
 {
-    private readonly List<IVisitable> _locationsList;
+    private readonly List<ILocation> _locationsList;
     
-    public Farm(List<IVisitable> list)
+    public Farm(List<ILocation> list)
     {
         _locationsList = list;
     }
 
-    public List<IVisitable> GetList()
+    public List<ILocation> GetLocations()
     {
         return _locationsList;
     }

@@ -46,7 +46,7 @@ public class Tourist : IVisitor
     public void visit(Farm farm)
     {
         Console.WriteLine("Wow, what an amaizing farm! First selfie: 🧑‍🌾");
-        foreach(var location in farm.GetList())
+        foreach(var location in farm.GetLocations())
         {
             location.accept(this);
         }
@@ -55,7 +55,7 @@ public class Tourist : IVisitor
     public void visit(Barn barn)
     {
         Console.WriteLine("I'm in a barn");
-        foreach (var animals in barn.GetList())
+        foreach (var animals in barn.GetAnimals())
         {
             animals.accept(this);
         }
@@ -70,7 +70,7 @@ public class Tourist : IVisitor
     public void visit(Field field)
     {
         Console.WriteLine("I'm in a field");
-        foreach (var animals in field.GetList())
+        foreach (var animals in field.GetAnimals())
         {
             animals.accept(this);
         }
