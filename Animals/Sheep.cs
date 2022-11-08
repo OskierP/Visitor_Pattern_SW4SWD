@@ -1,4 +1,4 @@
-public class Sheep : IAnimal
+public class Sheep : IVisitable
 {
     
     public Sheep(){}

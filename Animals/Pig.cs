@@ -1,4 +1,4 @@
-public class Pig : IAnimal
+public class Pig : IVisitable
 {
     public Pig(){}
     

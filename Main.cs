@@ -4,17 +4,15 @@ using Visitor_Pattern_SW4SWD.Workers;
 
 namespace Visitor_Pattern_SW4SWD
 {
-
-
     class Program
     {
         public static void Main(string[] args)
         {
-            Barn barn = new Barn(new List<IAnimal>{new Pig(), new Goat(), new Sheep()});
-            Field field = new Field(new List<IAnimal> { new Cow(), new Sheep() });
-            Pen pen = new Pen(new List<IAnimal> { new Chicken() });
+            Barn barn = new Barn(new List<IVisitable>{new Pig(), new Goat(), new Sheep()});
+            Field field = new Field(new List<IVisitable> { new Cow(), new Sheep() });
+            Pen pen = new Pen(new List<IVisitable> { new Chicken() });
             
-            Farm farm = new Farm(new List<ILocations>{barn, field, pen});
+            Farm farm = new Farm(new List<IVisitable>{barn, field, pen});
             
             Console.WriteLine("Hi, I'm Shearer\n");
             Shearer shearer = new Shearer();
@@ -40,8 +38,6 @@ namespace Visitor_Pattern_SW4SWD
             Console.WriteLine("\nHi, I'm a Butcher muhahah\nDon't look\n");
             Butcher butcher = new Butcher();
             farm.accept(butcher);
-            
-
         }
     }
 }

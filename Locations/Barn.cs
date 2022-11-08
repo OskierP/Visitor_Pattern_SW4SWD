@@ -1,21 +1,20 @@
-
-public class Barn: ILocations
+public class Barn: IVisitable
 {
-    private List<IAnimal> _animals;
+    private List<IVisitable> _animals;
 
-    public Barn(List<IAnimal> list)
+    public Barn(List<IVisitable> list)
     {
         _animals = list;
     }
 
-    public List<IAnimal> GetList()
+    public List<IVisitable> GetList()
     {
         return _animals;
     }
     
     public void accept(IVisitor visitor)
     {
-       visitor.visit(this);
+        visitor.visit(this);
     }
     
 }
