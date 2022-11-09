@@ -1,4 +1,4 @@
-public interface ILocation: IVisitable
+public interface ILocation: IElement
 {
     public List<IAnimal> GetAnimals();
 }

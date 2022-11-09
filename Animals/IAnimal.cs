@@ -1,4 +1,4 @@
-public interface IAnimal: IVisitable
+public interface IAnimal: IElement
 {
     
 }
