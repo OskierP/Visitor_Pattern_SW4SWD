@@ -31,12 +31,12 @@ public class Shearer : IVisitor
 
     public void visit(Chicken animal)
     {
-        Console.WriteLine($"I {typeof(Shearer)} visted {typeof(Chicken)}");
+        Console.WriteLine($"I cannot shear {animal.GetType()}");
     }
 
     public void visit(Goat animal)
     {
-        Console.WriteLine($"I {typeof(Shearer)} visted {typeof(Goat)}");
+        Console.WriteLine($"I cannot shear {animal.GetType()}");
     }
 
     public void visit(Farm farm)
