@@ -1,4 +1,4 @@
-public interface IVisitable
+public interface IElement
 {
     public void accept(IVisitor visitor);
 }

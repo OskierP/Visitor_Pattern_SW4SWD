@@ -1,4 +1,4 @@
-public class Farm: IVisitable
+public class Farm: IElement
 {
     private readonly List<ILocation> _locationsList;
     
