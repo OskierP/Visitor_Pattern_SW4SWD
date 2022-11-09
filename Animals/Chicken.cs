@@ -1,4 +1,4 @@
-public class Chicken : IVisitable
+public class Chicken : IAnimal
 {
     
     public Chicken(){}

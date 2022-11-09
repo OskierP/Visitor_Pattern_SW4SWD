@@ -8,11 +8,11 @@ namespace Visitor_Pattern_SW4SWD
     {
         public static void Main(string[] args)
         {
-            Barn barn = new Barn(new List<IVisitable>{new Pig(), new Goat(), new Sheep()});
-            Field field = new Field(new List<IVisitable> { new Cow(), new Sheep() });
-            Pen pen = new Pen(new List<IVisitable> { new Chicken() });
+            Barn barn = new Barn(new List<IAnimal>{new Pig(), new Goat(), new Sheep()});
+            Field field = new Field(new List<IAnimal> { new Cow(), new Sheep() });
+            Pen pen = new Pen(new List<IAnimal> { new Chicken() });
             
-            Farm farm = new Farm(new List<IVisitable>{barn, field, pen});
+            Farm farm = new Farm(new List<ILocation>{barn, field, pen});
             
             Console.WriteLine("Hi, I'm Shearer\n");
             Shearer shearer = new Shearer();

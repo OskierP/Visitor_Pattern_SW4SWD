@@ -1,13 +1,13 @@
-public class Barn: IVisitable
+public class Barn: ILocation
 {
-    private List<IVisitable> _animals;
+    private readonly List<IAnimal> _animals;
 
-    public Barn(List<IVisitable> list)
+    public Barn(List<IAnimal> list)
     {
         _animals = list;
     }
 
-    public List<IVisitable> GetList()
+    public List<IAnimal> GetAnimals()
     {
         return _animals;
     }

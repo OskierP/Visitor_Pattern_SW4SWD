@@ -29,7 +29,7 @@ public class Butcher : IVisitor
 
     public void visit(Farm farm)
     {
-        foreach(var location in farm.GetList())
+        foreach(var location in farm.GetLocations())
         {
             location.accept(this);
         }
@@ -38,7 +38,7 @@ public class Butcher : IVisitor
     public void visit(Barn barn)
     {
         Console.WriteLine("I'm in a barn");
-        foreach (var animals in barn.GetList())
+        foreach (var animals in barn.GetAnimals())
         {
             animals.accept(this);
         }
@@ -48,7 +48,7 @@ public class Butcher : IVisitor
     public void visit(Pen pen)
     {
         Console.WriteLine("I'm in a pen");
-        foreach (var animals in pen.GetList())
+        foreach (var animals in pen.GetAnimals())
         {
             animals.accept(this);
         }
@@ -58,7 +58,7 @@ public class Butcher : IVisitor
     public void visit(Field field)
     {
         Console.WriteLine("I'm in a field");
-        foreach (var animals in field.GetList())
+        foreach (var animals in field.GetAnimals())
         {
             animals.accept(this);
         }
