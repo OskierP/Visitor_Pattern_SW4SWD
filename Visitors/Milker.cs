@@ -9,18 +9,18 @@ public class Milker : IVisitor
         return _milk;
     }
     
-    public void visit(Cow cow)
+    public void visit(Cow animal)
     {
-        int cowMilk = cow.Milk();
+        int cowMilk = animal.Milk();
         Console.WriteLine($"Cow gave me {cowMilk} Litres of milk");
         _milk += cowMilk;
     }
 
-    public void visit(Sheep sheep)
+    public void visit(Sheep animal)
     {
-        if (sheep.HasMilk())
+        if (animal.HasMilk())
         {
-            int sheepMilk = sheep.Milk();
+            int sheepMilk = animal.Milk();
             Console.WriteLine($"Sheep gave me {sheepMilk} Litres of milk");
             _milk += sheepMilk;
         }
@@ -30,25 +30,25 @@ public class Milker : IVisitor
         }
     }
 
-    public void visit(Pig pig)
+    public void visit(Pig animal)
     {
         Console.WriteLine("Pig doesnt give milk");
     }
 
-    public void visit(Chicken chicken)
+    public void visit(Chicken animal)
     {
         Console.WriteLine("Chicken doesnt give milk");
     }
 
-    public void visit(Goat goat)
+    public void visit(Goat animal)
     {
-        if (goat.IsAngry())
+        if (animal.IsAngry())
         {
             Console.WriteLine("Auch! The goat headbutted me.");
         }
         else
         {
-            int goatMilk = goat.Milk();
+            int goatMilk = animal.Milk();
             Console.WriteLine($"Goat gave me {goatMilk} Litres of milk");
             _milk += goatMilk;
         }
